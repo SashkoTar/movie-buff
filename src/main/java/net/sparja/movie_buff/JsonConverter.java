@@ -22,32 +22,15 @@ public class JsonConverter {
             String line;
             int counter = 0;
             while ((line = br.readLine()) != null || counter < 100) {
-                int wikiPageStartIndex = line.indexOf("https");
-                if (wikiPageStartIndex > 0) {
-                    String[] fields = line.substring(0, wikiPageStartIndex).split(",");
-                    String year = fields[0];
-                    String title = fields[1];
-                    String origin = fields[2];
-                    String director = fields[3];
-                    String cast = fields[4];
-                    String genre = fields[5];
-                    System.out.println("Counter: " +counter + " Film: " + year + " - " + title + " - " + origin + " - " + director + " - " + cast + " - " + genre);
+                if (counter > 0) {
+                    System.out.println(line);
+                    Movie movie = Movie.parse(line);
+                    System.out.println("Counter: " +counter + " Film: " + movie.getReleaseYear() + " - " + movie.getTitle() + " - " + movie.getOrigin() + " - " + movie.getDirector() + " - " + movie.getCast() + " - " + movie.getGenre());
                 }
                 counter++;
             }
         }
     }
 
-    public static class Movie {
-        private String releaseYear;
-        private String title;
-        private String origin;
-        private String director;
-        private String cast;
-        private String genre;
-        private String wikiPage;
-        private String plot;
-
-    }
 
 }
