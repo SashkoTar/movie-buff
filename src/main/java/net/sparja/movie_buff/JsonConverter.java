@@ -22,7 +22,7 @@ public class JsonConverter {
 
         movies.forEach(movie -> {
             try {
-                System.out.println(objectMapper.writeValueAsString(movie));
+                System.out.println(objectMapper.writeValueAsString(movie) + ",");
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }
@@ -43,7 +43,9 @@ public class JsonConverter {
                     //System.out.println(line);
                     try {
                         Movie movie = Movie.parse(line);
-                        movies.add(movie);
+                        if(movie.getWikiPage().startsWith("http")) {
+                            movies.add(movie);
+                        }
                         //System.out.println("Counter: " +counter + " Film: " + movie.getReleaseYear() + " - " + movie.getTitle() + " - " + movie.getOrigin() + " - " + movie.getDirector() + " - " + movie.getCast() + " - " + movie.getGenre());
                     } catch (Exception ex) {
                         System.out.println("Film with Error: "  + line);

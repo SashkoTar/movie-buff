@@ -4,11 +4,13 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Movie {
 
+    private String id = UUID.randomUUID().toString();
     private String releaseYear;
     private String title;
     private String origin;
@@ -17,6 +19,10 @@ public class Movie {
     private String genre;
     private String wikiPage;
     private String plot;
+
+    public String getId() {
+        return id;
+    }
 
     public String getReleaseYear() {
         return releaseYear;

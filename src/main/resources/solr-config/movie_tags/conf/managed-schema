@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="example" version="1.5">
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+  <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+
+ <fields>
+  <field name="id" type="string" indexed="true" stored="true"/>
+  <field name="_version_" type="long" indexed="true" stored="true"/>
+  <field name="movie_buff_id" type="string" stored="true"/>
+  <field name="tag" type="string" indexed="true" stored="true"/>
+
+  </fields>
+
+</schema>
