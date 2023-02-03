@@ -4,10 +4,9 @@ curl -X POST -H 'Content-Type: application/json' --data-binary '{"delete":{"quer
 http://localhost:8983/solr/movie_buff/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
 
 
-
+# Get the schema
 http://localhost:8983/solr/movie_buff/schema
 
 
-
-
+#Find by the tag
 fq={!join from=movie_buff_id fromIndex=movie_tags to=id}tag:nineties
