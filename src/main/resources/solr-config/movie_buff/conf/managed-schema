@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="example" version="1.5">
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+  <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+
+ <fields>
+  <field name="id" type="string" indexed="true" stored="true"/>
+  <field name="_version_" type="long" indexed="true" stored="true"/>
+  <field name="releaseYear" type="string" indexed="true" stored="true"/>
+  <field name="title" type="string" multiValued="true" indexed="true" stored="true"/>
+  <field name="origin" type="string" indexed="true" stored="true"/>
+  <field name="director" type="string" indexed="true" stored="true"/>
+  <field name="cast" type="string" indexed="true" multiValued="true" stored="true"/>
+  <field name="genre" type="string" indexed="true" stored="true"/>
+  <field name="wikiPage" type="string"  indexed="true" stored="true"/>
+  <field name="plot" type="string" multiValued="true" indexed="true" stored="true"/>
+  </fields>
+
+</schema>
