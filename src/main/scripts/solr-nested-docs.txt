@@ -1,6 +1,6 @@
 bin\solr start
 
-# Truncate movie_buff
+# Truncate movie_buff_with_tag
 curl -X POST -H 'Content-Type: application/json' --data-binary '{"delete":{"query":"*:*" }}' http://localhost:8983/solr/movie_buff/update?commit=true
 
 http://localhost:8983/solr/movie_buff/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
@@ -11,4 +11,19 @@ http://localhost:8983/solr/movie_buff/schema
 
 
 #Find by the tag
-fq={!join from=movie_buff_id fromIndex=movie_tags to=id}tag:nineties
+	"query": "*:*",
+	"filter": "doc_type:ocean",
+	"fields": "*,[child]"
+
+
+Add nested doc
+
+{
+	"id": "3",
+	"_childDocuments_": {"add": [
+		{
+			"id": "fish4",
+			"tag": "Doe"
+		}
+	]}
+}
