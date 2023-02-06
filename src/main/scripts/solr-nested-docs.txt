@@ -20,10 +20,15 @@ Add nested doc
 
 {
 	"id": "3",
-	"_childDocuments_": {"add": [
+	"add": [
 		{
-			"id": "fish4",
+			"id": "fish4w",
 			"tag": "Doe"
-		}
-	]}
+		},
+		{
+            "id": "56",
+            "tag": "Seventies"
+        }
+	]
 }
+
