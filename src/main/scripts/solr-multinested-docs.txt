@@ -1,0 +1,31 @@
+bin\solr start
+
+# Truncate movie_buff_with_tag
+curl -X POST -H 'Content-Type: application/json' --data-binary '{"delete":{"query":"*:*" }}' http://localhost:8983/solr/movie_buff_multitags/update?commit=true
+
+http://localhost:8983/solr/movie_buff_multitags/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
+
+
+# Get the schema
+http://localhost:8983/solr/movie_buff_multitags/schema
+
+
+#Find by the tag
+	"query": "*:*",
+	"filter": "doc_type:ocean",
+	"fields": "*,[child]"
+
+
+
+Update Multitag document
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/movie_buff_multitags/update/json/docs' --data-binary '
+{
+  "id": "2",
+  "tags": ["Doc 1", "Nineties"]
+}'
+
+
+{
+    "id": "4",
+    "tags": {"set": ["Bobby", "Nine"]}
+}
