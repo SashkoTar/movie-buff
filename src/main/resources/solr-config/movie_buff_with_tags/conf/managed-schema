@@ -11,6 +11,7 @@
   <field name="_root_" type="string"  indexed="true" stored="false"/>
   <field name="title" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="tag" type="string" indexed="true" stored="true"/>
+  <dynamicField name="*_str" type="string" multiValued="true" indexed="true"  stored="true"/>
 
 </fields>
 

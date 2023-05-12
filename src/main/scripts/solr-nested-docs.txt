@@ -1,9 +1,9 @@
 bin\solr start
 
 # Truncate movie_buff_with_tag
-curl -X POST -H 'Content-Type: application/json' --data-binary '{"delete":{"query":"*:*" }}' http://localhost:8983/solr/movie_buff/update?commit=true
+curl -X POST -H 'Content-Type: application/json' --data-binary '{"delete":{"query":"*:*" }}' http://localhost:8983/solr/movie_buff_with_tags/update?commit=true
 
-http://localhost:8983/solr/movie_buff/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
+http://localhost:8983/solr/movie_buff_with_tags/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
 
 
 # Get the schema
