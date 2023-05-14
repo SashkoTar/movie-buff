@@ -38,3 +38,4 @@ local.settings.json
 bin/
 obj/
 src/main/resources/wiki_movie_plots_deduped.csv
+data/
